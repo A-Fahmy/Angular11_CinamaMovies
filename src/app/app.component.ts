@@ -86,8 +86,10 @@ export class AppComponent {
     this.route.navigate(['actorlist']);
   }
   GetMovieLinkList() {
+    // Fahmy
     this.route.navigate(['movelinklist']);
   }
+
 
   GetMovieActorList() {
     this.route.navigate(['moveactorlist']);
