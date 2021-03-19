@@ -1,0 +1,33 @@
+<div class="">
+  <div class="alert alert-primary" role="alert">
+    <strong>صلاحيات المجموعات</strong>
+</div>
+
+  <div>
+      <table id="tbl" class="table table-response bg-light border">
+          <thead>
+              <tr class="bg-dark text-light">
+                  <th>اسم المجموعة</th>
+                  <th>اسم المجموعة</th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let role of roles">
+                  <td scope="row">{{role.name}}</td>
+                  <td>{{role.normalizedName}}</td>
+                  <td>
+                      <div>
+                          <button type="button" (click)="EditRoleClick(role.id)"
+                              class="btn btn-primary btn-sm">تعديل</button>
+                      </div>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+</div>
+
+<!-- Modal -->
+

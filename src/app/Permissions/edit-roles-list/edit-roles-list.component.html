@@ -1,0 +1,83 @@
+<div class="">
+  <div class="alert alert-primary" role="alert">
+    <strong>قائمة المستخدمين</strong>
+</div>
+<div>
+    <button type="button" class="btn btn-success mb-3" (click)="OnBack()">رجوع</button>
+</div>
+<div>
+      <table id="tbl" class="table table-response bg-light border">
+          <thead>
+              <tr class="bg-dark text-light">
+                  <th>كود</th>
+                  <th>اسم الشاشة</th>
+                  <th>
+                    <label class="form-check-label" for="ckInsert">حفظ</label>
+                    <input type="checkbox" class="ckInsert"   (change)="Function_Insert($event)">
+                  </th>
+                  <th>
+                    <label class="form-check-label" for="ckUpdate">تعديل</label>
+                    <input type="checkbox" class="ckUpdate"  (change)="Function_Update($event)">
+                  </th>
+                  <th>
+                    <label class="form-check-label" for="ckDelete">حذف</label>
+                    <input type="checkbox" class="ckDelete"  (change)="Function_Delete($event)">
+                  </th>
+                  <th>
+                    <label class="form-check-label" for="ckView">عرض</label>
+                    <input type="checkbox" class="ckView"  (change)="Function_View($event)">
+                  </th>
+                  <th>
+                    <label class="form-check-label" for="ckPrint">طباعة</label>
+                    <input type="checkbox" class="ckPrint"  (change)="Function_Print($event)">
+                  </th>
+                  <th></th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let role of EditRoles">
+                  <td scope="row">{{role.componentId}}</td>
+                  <td>{{role.componentName}}</td>
+                  <td *ngIf="role.insertYN" >
+                      <input type="checkbox"   class="ckInsert"  onclick="return false;" onkeydown="return false;"    checked    value="{{role.insertYN}}">
+                  </td>
+                  <td *ngIf="!role.insertYN" >
+                    <input type="checkbox"   class="ckInsert" onclick="return false;" onkeydown="return false;"  value="{{role.insertYN}}">
+                  </td>
+                  <td  *ngIf="role.updateYN" >
+                    <input type="checkbox" class="ckUpdate"  onclick="return false;" onkeydown="return false;" checked  value="{{role.updateYN}}">
+                  </td>
+                  <td  *ngIf="!role.updateYN" >
+                    <input type="checkbox" class="ckUpdate" onclick="return false;" onkeydown="return false;"  value="{{role.updateYN}}">
+                  </td>
+
+                <td *ngIf="role.deleteYN" >
+                   <input type="checkbox" class="ckDelete" onclick="return false;" onkeydown="return false;" checked value="{{role.deleteYN}}">
+                 </td>
+                 <td *ngIf="!role.deleteYN" >
+                  <input type="checkbox" class="ckDelete"  onclick="return false;" onkeydown="return false;" value="{{role.deleteYN}}">
+                </td>
+                <td *ngIf="role.viewYN">
+                  <input type="checkbox" class="ckView" onclick="return false;" onkeydown="return false;" checked value="{{role.viewYN}}">
+                </td>
+                <td *ngIf="!role.viewYN">
+                  <input type="checkbox" class="ckView" onclick="return false;" onkeydown="return false;" value="{{role.viewYN}}">
+                </td>
+                <td *ngIf="role.printYN">
+                  <input type="checkbox" class="ckPrint"  onclick="return false;" onkeydown="return false;" checked value="{{role.printYN}}">
+                </td>
+                <td *ngIf="!role.printYN">
+                  <input type="checkbox" class="ckPrint" onclick="return false;" onkeydown="return false;"  value="{{role.printYN}}">
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary btn-sm" (click)="EditRow(role.roleId,role.componentId)">تعديل</button>
+              </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+
+
+<!--  -->
+

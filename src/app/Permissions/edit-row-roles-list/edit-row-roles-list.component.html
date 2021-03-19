@@ -1,0 +1,59 @@
+<div class="container mt-4 mb-4">
+  <div class="alert alert-primary" role="alert">
+    <strong>تعديل الصلاحية</strong>
+</div>
+<div>
+    <button type="button" class="btn btn-success mb-3" (click)="OnBack()">رجوع</button>
+</div>
+  <hr class="mb-4" />
+  <div class="login-container">
+      <div class="alert alert-success alert-dismissible fade show" role="alert"
+          *ngIf="message != null && message != ''">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+              <span class="sr-only">Close</span>
+          </button>
+          {{message}}
+      </div>
+      <div class="col-md-5">
+          <form [formGroup]="rowForm" (ngSubmit)="onSubmit()">
+            <div class="form-check mb-3">
+              <label class="form-check-label">
+                  <input type="checkbox" formControlName="InsertYN" class="form-check-input ml-2"
+                      name="InsertYN" id="InsertYN" value="checkedValue" (change)="Function_Insert($event)" >
+                  <label class="mr-3">حفظ</label>
+              </label>
+          </div>
+          <div class="form-check mb-3">
+            <label class="form-check-label">
+                <input type="checkbox" formControlName="UpdateYN" class="form-check-input ml-2"
+                    name="UpdateYN" id="UpdateYN" value="checkedValue" (change)="Function_Update($event)" >
+                <label class="mr-3">تعديل</label>
+            </label>
+        </div>
+        <div class="form-check mb-3">
+          <label class="form-check-label">
+              <input type="checkbox" formControlName="DeleteYN" class="form-check-input ml-2"
+                  name="DeleteYN" id="DeleteYN" value="checkedValue"  (change)="Function_Delete($event)" >
+              <label class="mr-3">حذف</label>
+          </label>
+      </div>
+      <div class="form-check mb-3">
+        <label class="form-check-label">
+            <input type="checkbox" formControlName="ViewYN" class="form-check-input ml-2"
+                name="ViewYN" id="ViewYN" value="checkedValue" (change)="Function_View($event)" >
+            <label class="mr-3">عرض</label>
+        </label>
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+          <input type="checkbox" formControlName="PrintYN" class="form-check-input ml-2"
+              name="PrintYN" id="PrintYN" value="checkedValue" (change)="Function_Print($event)" >
+          <label class="mr-3">طباعة</label>
+      </label>
+  </div>
+              <button type="submit" class="btn btn-primary">تسجيل</button>
+          </form>
+      </div>
+  </div>
+</div>
