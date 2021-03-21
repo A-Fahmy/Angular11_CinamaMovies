@@ -32,6 +32,7 @@ import { DashboardGaurdService } from './gaurds/dashboard-gaurd.service';
 import { HomeComponent } from './home/home.component';
 import { OrderComponent } from './Modules/Transaction/order/order.component';
 import { OrdersComponent } from './Modules/Transaction/orders/orders.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { EditRolesListComponent } from './Permissions/edit-roles-list/edit-roles-list.component';
 import { EditRowRolesListComponent } from './Permissions/edit-row-roles-list/edit-row-roles-list.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
 
   { path: '', component: LoginComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
+  { path: 'home/:id', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'login', component: LoginComponent },
   { path: 'registerconfirm', component: RegisterconfirmComponent },
@@ -83,6 +85,7 @@ const routes: Routes = [
   { path: 'moveactorlist', component: MovieActorListComponent },
   { path: 'editmovieactor/:id', component: EditMovieActorComponent },
   { path: 'addmovieactor', component: EditMovieActorComponent },
+  { path: 'getmovie/:id', component: MovieDetailsComponent },
 
 
   { path: 'UserPermission', component: UserListComponent },

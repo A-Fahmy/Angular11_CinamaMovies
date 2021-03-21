@@ -48,6 +48,7 @@ import { MovieLinkListComponent } from './Admin/MovieLinks/movie-link-list/movie
 import { EditMovieLinkComponent } from './Admin/MovieLinks/edit-movie-link/edit-movie-link.component';
 import { MovieActorListComponent } from './Admin/MovieActors/movie-actor-list/movie-actor-list.component';
 import { EditMovieActorComponent } from './Admin/MovieActors/edit-movie-actor/edit-movie-actor.component';
+import { MovieDetailsComponent } from './movie-details/movie-details.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { EditMovieActorComponent } from './Admin/MovieActors/edit-movie-actor/ed
     SubCategoryComponent,
     AddActorComponent,
     ActorListComponent,
+    MovieDetailsComponent,
 
     OrdersComponent,
     OrderComponent,
